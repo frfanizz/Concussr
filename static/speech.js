@@ -19,6 +19,9 @@ startRecording = function() {
   recognition.start();
   console.log('Listening for numbers...');
 
+  $(".t" + current_test + "_display").css('display', 'block')
+
+  $("#info").css('display', 'none')
   $("#recordBtn")[0].onclick = stopRecording
   $("#recordBtn")[0].textContent = "End Test"
 }
@@ -28,8 +31,10 @@ stopRecording = function() {
   recognition.stop();
   console.log('Done listening');
 
+  $(".t" + current_test + "_display").css('display', 'none')
+
   $("#recordBtn")[0].onclick = startRecording
-  $("#recordBtn")[0].textContent = "Start Test"
+  $("#recordBtn")[0].textContent = "Start Test " + (current_test + 1)
 }
 
 $("#recordBtn")[0].onclick = startRecording;
@@ -66,11 +71,8 @@ submitSolution = function(correct, guess) {
   }
   total_score += score
 
-  $(".t" + current_test + "_display").css('display', 'none')
-
   if (current_test != total_tests) {
     current_test += 1
-    $(".t" + current_test + "_display").css('display', 'block')
   } else {
     $("#recordBtn").css('display', 'none')
     $("#results").css('display', 'block')

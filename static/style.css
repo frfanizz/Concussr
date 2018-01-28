@@ -9,6 +9,7 @@ body{
   border-color: #68B0AB;
   background: #DBDBDB;
   border-radius: 40px;
+  padding: 20px;
   max-width: 360px;
 }
 
@@ -49,15 +50,13 @@ body{
 }
 
 .results{
-  display: inline-block;
+  display: block;
   padding: 10px;
   background: #68B0AB;
   color: white;
   font-weight: bolder;
   border: solid 2px #68B0AB;
   border-radius: 4px;
-
-
 }
 
 button{

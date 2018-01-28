@@ -9,48 +9,67 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
   </head>
   <body>
-  <div id="t1_solution"style="visibility: hidden;">{{ t1_solution }}</div>
-  <div id="t2_solution"style="visibility: hidden;">{{ t2_solution }}</div>
-  <div id="t3_solution"style="visibility: hidden;">{{ t3_solution }}</div>
-  <div class="container text-center">
-    
-    <div class="appheader col-xs-12 col-md-6 col-md-offset-4 col-lg-6 col-lg-offset-4  ">
-        <img style="float:left; padding: 10px" src="static/logo.png" length="75px" width="75px" /> concusrr
-    </div>
-
-    <div class="row t1_display">
-      <div class="col-xs-12 col-md-6 col-md-offset-4 col-lg-6 col-lg-offset-4 test1 leroy" style="margin-top: 1em;">
-        {% for line in t1_lines %}
-        {{line}}<br/>
-        {% endfor %}
-      </div>
-    </div>
-    
-    <div class="row t2_display" style="display: none;">
-      <div class="col-xs-12 col-md-6 col-md-offset-4 col-lg-6 col-lg-offset-4 test2 leroy">
-        {% for line in t2_lines %}
-        {{line}}<br/>
-        {% endfor %}
-      </div>
-    </div>
-    
-    <div class="row t3_display" style="display: none;">
-      <div class="col-xs-12 col-md-6 col-md-offset-4 col-lg-6 col-lg-offset-4 test3 leroy">
-        {% for line in t3_lines %}
-        {{line}}<br/>
-        {% endfor %}
-      </div>
-    </div>
-    
-      <div class="appbuttons" >
-        <button type="button" id="recordBtn" style="z-index: 2;">Start Test</button>
+    <div id="t1_solution"style="visibility: hidden;">{{ t1_solution }}</div>
+    <div id="t2_solution"style="visibility: hidden;">{{ t2_solution }}</div>
+    <div id="t3_solution"style="visibility: hidden;">{{ t3_solution }}</div>
+    <div class="container text-center">
+      <div class="appheader row">
+          <img style="float:left; padding: 10px" src="static/logo.png" length="75px" width="75px" /> concusrr
       </div>
 
-        <div id="results" style="display: none;">
-          <p id="totalTime"></p>
-          <p id="totalCorrect"></p>
+      <div class="row appbuttons">
+        <button type="button" id="recordBtn">Start Test 1</button>
+      </div>
+
+      <div id="info" class="row leroy test1" style="text-align: left;">
+        <p>
+          The King-Devick test is an effective method to test the ocular affects
+          of a concussion. In this test, you are tasked with reading each line of
+          numbers out loud.
+        </p>
+        <p>
+          There are three different tests, each with their own set of numbers.
+          For each test, you hit the 'start test' button, read the numbers out
+          loud, and click the same button to end the recording when you are done
+          reading the numbers.
+        </p>
+        <p>
+          After all three tests are done, you will be shown how many numbers you
+          correctly read in order, and how long it took for you to read all of
+          the sets. Taking too long on the tests, or having too many errors,
+          indicates degraded vision processing, which may be indicative of a
+          concussion.
+        </p>
+      </div>
+
+      <div class="row t1_display" style="display: none;">
+        <div class="col-xs-12 col-md-6 col-md-offset-4 col-lg-6 col-lg-offset-4 test1 leroy" style="margin-top: 1em;">
+          {% for line in t1_lines %}
+          {{line}}<br/>
+          {% endfor %}
         </div>
-
+      </div>
+      
+      <div class="row t2_display" style="display: none;">
+        <div class="col-xs-12 col-md-6 col-md-offset-4 col-lg-6 col-lg-offset-4 test2 leroy">
+          {% for line in t2_lines %}
+          {{line}}<br/>
+          {% endfor %}
+        </div>
+      </div>
+      
+      <div class="row t3_display" style="display: none;">
+        <div class="col-xs-12 col-md-6 col-md-offset-4 col-lg-6 col-lg-offset-4 test3 leroy">
+          {% for line in t3_lines %}
+          {{line}}<br/>
+          {% endfor %}
+        </div>
+      </div>
+      
+      <div class="row leroy" id="results" style="display: none;">
+        <p id="totalTime"></p>
+        <p id="totalCorrect"></p>
+      </div>
     </div>
 
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
