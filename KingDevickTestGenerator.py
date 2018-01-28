@@ -11,6 +11,11 @@ def generateTest(testVersion = 1):
     """
     Generate a King-Devick Test
     """
+    spacer = " "
+    if testVersion == 1 :
+        spacer = "-"
+    else :
+        spacer = " "
     output = ""
     outputSoln = ""
     for row in range(testRows) :
@@ -19,21 +24,12 @@ def generateTest(testVersion = 1):
         rowLocs = rowLocs[0:-1]
         output += str(rand.randint(0,9))
         for currPos in range(testWidth) :
-            if testVersion == 1 :
-                output += "-" * testSpacing
-            else :
-                output += " " * testSpacing
+            output += spacer * testSpacing
             if currPos in rowLocs :
                 output += (str(rand.randint(0,9)))
             else :
-                if testVersion == 1 :
-                    output += "-"
-                else :
-                    output += " "
-        if testVersion == 1 :
-            output += "-" * testSpacing + str(rand.randint(0,9)) + "\n"
-        else :
-            output += " " * testSpacing + str(rand.randint(0,9)) + "\n"
+                output += spacer
+        output += spacer * testSpacing + str(rand.randint(0,9)) + "\n"
         if testVersion == 1 or testVersion == 2 :
             output += "\n"
     for char in output :
