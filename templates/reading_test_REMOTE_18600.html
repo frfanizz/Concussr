@@ -14,7 +14,8 @@
 #DDA448
 */
       .leroy  {
-        margin-top: 1em;
+        margin: 1em;
+        width: 92.5%;
         border: solid 6px;
         border-color: #68B0AB;
         background: #DBDBDB;
@@ -24,50 +25,30 @@
       }
       .test1{
         line-height: 3em;
-         margin-left: auto;
-        margin-right: auto;
       }
       .test2{
         line-height: 6em;
       }
       .container{
-        padding: 0;
-        max-width:500px;
+        width: 55%;
         padding: auto;
         margin: auto;
 
       }
-      .appheader{
-        font-variant: small-caps;
-        font-size:4em;
-
-        background:#68B0AB;
-      }
-
-      .row{
-        margin-left: auto;
-        margin-right: auto;
-      }
 
       button{
-        padding: 10px;
+
         background: #68B0AB;
-        font-size:2em;
+        font:2em;
         color: white;
         font-weight: bolder;
         border: solid 2px #68B0AB;
-        border-radius: 4px;
       }
 
     </style>
   </head>
   <body>
   <div class="container text-center">
-    <div class="appheader">
-        concusrr
-
-    </div>
-
     <div class="row">
         <div class="col-xs-12 col-md-6 col-md-offset-4 col-lg-6 col-lg-offset-3 test1 leroy">
           {% for line in test_1_lines %}
@@ -88,8 +69,6 @@
         <p class="output"><em>...diagnostic messages</em></p>
     </div>
     
-    <button type="button" id="recordBtn">Record</button>
-    <p id="testResults"></p>
 
     <div class="container test1">
       {% for line in test_1_lines %}
@@ -103,9 +82,10 @@
     </div>
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    
+    <button type="button" id="recordBtn">Start Test</button>
     <button type="button" id="newRecordBtn">Start Test</button>
     <button type="button" id="stopRecordBtn">Stop Test</button>
+    <p id="testResults"></p>
     <script src="{{ url_for('static', filename='record.js') }}"></script>
     <script src="{{ url_for('static', filename='speech.js') }}"></script>
   </body>
