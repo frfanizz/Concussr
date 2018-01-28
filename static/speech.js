@@ -78,10 +78,12 @@ submitSolution = function(correct, guess) {
 
 recognition.onnomatch = function(event) {
   // TODO
+  // TONOTTODO
 }
 
 recognition.onerror = function(event) {
   // TODO
+  // TONOTTODO
 }
 
 // Longest common subsequence length
