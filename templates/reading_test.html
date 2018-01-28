@@ -10,10 +10,13 @@
         font-family: 'Lucida Console';
       }
 
-      .container {
-        max-width: 500px;
-        padding-top: 100px;
-        
+      .container-fluid  {
+        margin: 1em;
+        width: 92.5%;
+        border: solid 6px;
+        border-color: blue;
+        border-radius: 40px;
+
       }
       .test1{
         line-height: 3em;
@@ -25,16 +28,22 @@
     </style>
   </head>
   <body>
-    <div class="container test1">
-      {% for line in test_1_lines %}
-      {{line}}
-      {% endfor %}
+    <div class="row">
+        <div class="col-xs-12 col-md-6 col-lg-6 container-fluid test1">
+          {% for line in test_1_lines %}
+          {{line}}
+          {% endfor %}
+        </div>
+    
+      </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-lg-6 container-fluid test2">
+        {% for line in test_2_lines %}
+        {{line}}
+        {% endfor %}
+      </div>
     </div>
-    <div class="container test2">
-      {% for line in test_2_lines %}
-      {{line}}
-      {% endfor %}
-    </div>
+
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
   </body>
