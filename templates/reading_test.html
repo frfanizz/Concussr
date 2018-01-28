@@ -67,17 +67,16 @@
   <div class="container text-center">
     <div class="appheader">
         concusrr
-
     </div>
 
-    <div class="row">
-        <div class="col-xs-12 col-md-6 col-md-offset-4 col-lg-6 col-lg-offset-3 test1 leroy">
-          {% for line in t1_lines %}
-          {{line}}
-          {% endfor %}
-        </div>
+    <div class="row t1_display">
+      <div class="col-xs-12 col-md-6 col-md-offset-4 col-lg-6 col-lg-offset-3 test1 leroy">
+        {% for line in t1_lines %}
+        {{line}}
+        {% endfor %}
       </div>
-    <div class="row">
+    </div>
+    <div class="row t2_display" style="display: none;">
       <div class="col-xs-12 col-md-offset-4 col-md-6 col-md-offset-6 col-lg-6 test2 leroy">
         {% for line in t2_lines %}
         {{line}}
