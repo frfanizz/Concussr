@@ -14,15 +14,25 @@ recognition.lang = 'en-US';
 recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 
-$("#newRecordBtn")[0].onclick = function() {
+startRecording = function() {
+  start_time = (new Date()).getTime()
   recognition.start();
   console.log('Listening for numbers...');
+
+  $("#recordBtn")[0].onclick = stopRecording
+  $("#recordBtn")[0].textContent = "Stop recording"
 }
 
-$("#stopRecordBtn")[0].onclick = function() {
+stopRecording = function() {
+  total_time += (new Date()).getTime() - start_time;
   recognition.stop();
-  console.log('Done listening.');
+  console.log('Done listening');
+
+  $("#recordBtn")[0].onclick = startRecording
+  $("#recordBtn")[0].textContent = "Start recording"
 }
+
+$("#recordBtn")[0].onclick = startRecording;
 
 recognition.onresult = function(event) {
   // The SpeechRecognitionEvent results property returns a SpeechRecognitionResultList object
@@ -49,13 +59,20 @@ recognition.onresult = function(event) {
 }
 
 submitSolution = function(correct, guess) {
-  console.log(lcsLength(correct, guess))
+  var score = lcsLength(correct, guess)
+  console.log(score)
+  total_score += score
 
   $(".t" + current_test + "_display").css('display', 'none')
 
   if (current_test != total_tests) {
     current_test += 1
     $(".t" + current_test + "_display").css('display', 'inline-block')
+  } else {
+    $("#recordBtn").css('display', 'none')
+    $("#results").css('display', 'inline-block')
+    $("#totalTime")[0].textContent = "Total time: " + (total_time / 1000) + " seconds"
+    $("#totalCorrect")[0].textContent = "Total correct: " + total_score + "/" + total_numbers
   }
 }
 
@@ -79,8 +96,7 @@ function lcsLength(trial, actual) {
         actual = s;
     }
     m = trial.length;
-    n = actual.length;
-    //build the dynamic programming table
+    n = actual.length; //build the dynamic programming table
     for (j=0; j<n; j++) {
         row[j] = 0;
     }
@@ -101,6 +117,9 @@ function lcsLength(trial, actual) {
     return row[--j];
 }
 
+var start_time = 0;
 var current_test = 1;
 var total_tests = 2;
-
+var total_time = 0;
+var total_score = 0;
+var total_numbers = 25 * total_tests;
