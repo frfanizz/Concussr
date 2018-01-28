@@ -122,4 +122,4 @@ var current_test = 1;
 var total_tests = 2;
 var total_time = 0;
 var total_score = 0;
-var total_numbers = 25 * total_tests;
+var total_numbers = 40 * total_tests;
