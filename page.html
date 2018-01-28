@@ -1,0 +1,70 @@
+<body>
+
+	<div id="my_camera"></div>
+
+	<!-- First, include the Webcam.js JavaScript Library -->
+	<script type="text/javascript" src="../webcam.min.js"></script>
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.187.0.min.js"></script>
+
+	<!-- Configure a few settings and attach camera -->
+	<script language="JavaScript">
+		Webcam.set({
+			width: 320,
+			height: 240,
+			image_format: 'jpeg',
+			jpeg_quality: 90
+		});
+		Webcam.attach( '#my_camera' );
+	</script>
+
+	<!-- A button for taking snaps -->
+	<form>
+		<input type=button value="Take Snapshot" onClick="take_snapshot()">
+	</form>
+
+	<!-- Code to handle taking the snapshot and displaying it locally -->
+	<script language="JavaScript">
+		function take_snapshot() {
+			// take snapshot and get image data
+			Webcam.snap( function(data_uri) {
+				// display results in page
+        sendToAWS(createParams(convertToBase64(data_uri)));
+			} );
+		}
+	</script>
+
+  <script language="JavaScript">
+    var rekognition = new AWS.Rekognition();
+    function createParams(img) {
+        var params = {
+            DetectionAttributes: [ ALL ],
+            Image: {
+                Bytes: new Buffer(img),
+                S3Object: {
+                    Bucket: "concussr" //change
+                }
+            }
+        }
+        return params
+    }
+    function convertToBase64(img) {
+        var canvas, ctx, dataURL, base64;
+        canvas = document.createElement("canvas");
+        ctx = canvas.getContext("2d");
+        canvas.width = img.width;
+        canvas.height = img.height;
+        ctx.drawImage(img, 0, 0);
+        dataURL = canvas.toDataURL("image/png");
+        base64 = dataURL.replace(/^data:image\/png;base64,/, "");
+        return base64;
+    }
+
+    function sendToAWS(params) {
+      rekognition.detectFaces(createParams(img), function(err, data)) {
+          if (err) console.log(err, err.stack);
+          else    console.log(data);
+      }
+    }
+  </script>
+
+</body>

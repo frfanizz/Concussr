@@ -5,24 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link type="text/css" href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.webapp') }}">
     <style type="text/css">
+      body{
+        font-family: 'Lucida Console';
+      }
+
       .container {
         max-width: 500px;
         padding-top: 100px;
+        
       }
+      .test1{
+        line-height: 3em;
+      }
+      .test2{
+        line-height: 6em;
+      }
+
     </style>
   </head>
   <body>
-    <div class="container">
+    <p class="hints"></p>
+    <div>
+        <p class="output"><em>...diagnostic messages</em></p>
+    </div>
+
+    <div class="container test1">
       {% for line in test_1_lines %}
-      {{line}}</br><hr>
+      {{line}}
       {% endfor %}
     </div>
-    <div class="container">
+    <div class="container test2">
       {% for line in test_2_lines %}
-      {{line}}</br><hr>
+      {{line}}
       {% endfor %}
     </div>
+    <script src="{{ url_for('static', filename='speech.js') }}"></script>
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <button type="button" id="recordBtn">Start Test</button>

@@ -1,0 +1,15 @@
+{
+  "name": "Concussr",
+  "description": "Web Speech API  speech recognition demo",
+  "type": "privileged",
+  "launch_path": "/index.html",
+  "default_locale": "en",
+  "permissions": {
+    "audio-capture" : {
+      "description" : "Audio capture"
+    },
+    "speech-recognition" : {
+      "description" : "Speech recognition"
+    }
+  }
+}
