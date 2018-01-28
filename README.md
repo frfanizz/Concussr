@@ -39,7 +39,7 @@ Go for it!
 
 ## Authors
 
-* [Adam Burns](https://github.com/adamburns) - 
+* [Adam Burns](https://github.com/adamburns) - Eye tracking
 * [Francesco Fanizza](https://github.com/frfanizz) - Test generator functions, scoring of test, timer
 * [Claudiu Moise](https://github.com/cnmoise) - Test layout, CSS
 * [Mitch Croal](https://github.com/Artemish) - Set up page from frameworks, speech recognition API
