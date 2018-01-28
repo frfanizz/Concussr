@@ -62,6 +62,7 @@
     </style>
   </head>
   <body>
+  
   <div class="container text-center">
     <div class="appheader">
         concusrr
@@ -83,30 +84,17 @@
         {% endfor %}
       </div>
     </div>
-    <p class="hints"></p>
-    <div>
-        <p class="output"><em>...diagnostic messages</em></p>
     </div>
     
     <button type="button" id="recordBtn">Record</button>
     <p id="testResults"></p>
 
-    <div class="container test1">
-      {% for line in test_1_lines %}
-      {{line}}
-      {% endfor %}
-    </div>
-    <div class="container test2">
-      {% for line in test_2_lines %}
-      {{line}}
-      {% endfor %}
-    </div>
+    <script src="{{ url_for('static', filename='speech.js') }}"></script>
+
+
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     
-    <button type="button" id="newRecordBtn">Start Test</button>
-    <button type="button" id="stopRecordBtn">Stop Test</button>
     <script src="{{ url_for('static', filename='record.js') }}"></script>
-    <script src="{{ url_for('static', filename='speech.js') }}"></script>
   </body>
 </html>
