@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Flask Template Example</title>
+    <title>Concussr</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link type="text/css" href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
@@ -11,10 +11,13 @@
         font-family: 'Lucida Console';
       }
 
-      .container {
-        max-width: 500px;
-        padding-top: 100px;
-        
+      .container-fluid  {
+        margin: 1em;
+        width: 92.5%;
+        border: solid 6px;
+        border-color: blue;
+        border-radius: 40px;
+
       }
       .test1{
         line-height: 3em;
@@ -26,6 +29,24 @@
     </style>
   </head>
   <body>
+<<<<<<< HEAD
+    <div class="row">
+        <div class="col-xs-12 col-md-6 col-lg-6 container-fluid test1">
+          {% for line in test_1_lines %}
+          {{line}}
+          {% endfor %}
+        </div>
+    
+      </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-lg-6 container-fluid test2">
+        {% for line in test_2_lines %}
+        {{line}}
+        {% endfor %}
+      </div>
+    </div>
+
+=======
     <p class="hints"></p>
     <div>
         <p class="output"><em>...diagnostic messages</em></p>
@@ -42,7 +63,11 @@
       {% endfor %}
     </div>
     <script src="{{ url_for('static', filename='speech.js') }}"></script>
+>>>>>>> 652f030a0ee437a70a0b5443603c804aef745c97
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <button type="button" id="recordBtn">Start Test</button>
+    <p id="testResults"></p>
+    <script src="{{ url_for('static', filename='record.js') }}"></script>
   </body>
 </html>
