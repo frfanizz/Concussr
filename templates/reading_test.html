@@ -3,21 +3,25 @@
   <head>
     <title>Concussr</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link type="text/css" href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
     <link rel="manifest" href="{{ url_for('static', filename='manifest.webapp') }}">
     <style type="text/css">
       body{
         font-family: 'Lucida Console';
       }
-
-      .container-fluid  {
+/*
+#DDA448
+*/
+      .leroy  {
         margin: 1em;
         width: 92.5%;
         border: solid 6px;
-        border-color: blue;
+        border-color: #68B0AB;
+        background: #DBDBDB;
         border-radius: 40px;
 
+        max-width: 500px;
       }
       .test1{
         line-height: 3em;
@@ -25,12 +29,28 @@
       .test2{
         line-height: 6em;
       }
+      .container{
+        width: 55%;
+        padding: auto;
+        margin: auto;
+
+      }
+
+      button{
+
+        background: #68B0AB;
+        font:2em;
+        color: white;
+        font-weight: bolder;
+        border: solid 2px #68B0AB;
+      }
 
     </style>
   </head>
   <body>
+  <div class="container text-center">
     <div class="row">
-        <div class="col-xs-12 col-md-6 col-lg-6 container-fluid test1">
+        <div class="col-xs-12 col-md-6 col-md-offset-4 col-lg-6 col-lg-offset-3 test1 leroy">
           {% for line in test_1_lines %}
           {{line}}
           {% endfor %}
@@ -38,17 +58,17 @@
     
       </div>
     <div class="row">
-      <div class="col-xs-12 col-md-6 col-lg-6 container-fluid test2">
+      <div class="col-xs-12 col-md-offset-4 col-md-6 col-md-offset-6 col-lg-6 test2 leroy">
         {% for line in test_2_lines %}
         {{line}}
         {% endfor %}
       </div>
     </div>
-
     <p class="hints"></p>
     <div>
         <p class="output"><em>...diagnostic messages</em></p>
     </div>
+    
 
     <div class="container test1">
       {% for line in test_1_lines %}
