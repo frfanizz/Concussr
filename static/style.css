@@ -14,20 +14,15 @@ body{
 
 .test1{
   line-height: 2em;
-  letter-spacing: 0.2em;
 }
 
 .test2{
   line-height: 4em;
-  letter-spacing: 0.2em;
 }
 
 .container{
+	margin-top: 0px;
   padding: 0;
-<<<<<<< HEAD
-=======
-  max-width:360px;
->>>>>>> cf9db11b1fa76d71142f132574d76a146fa252ed
   padding: auto;
   margin: auto;
 }
@@ -36,6 +31,8 @@ body{
   font-variant: small-caps;
   font-size:4em;
   background:#68B0AB;
+  max-width: 360px;
+
 }
 
 .appbuttons{
