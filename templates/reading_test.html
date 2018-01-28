@@ -10,11 +10,18 @@
       body{
         font-family: 'Lucida Console';
       }
+/*
+#DDA448
+*/
+      .container  {
+        margin: 1em;
+        width: 92.5%;
+        border: solid 6px;
+        border-color: #68B0AB;
+        background: #DBDBDB;
+        border-radius: 40px;
 
-      .container {
         max-width: 500px;
-        padding-top: 100px;
-        
       }
       .test1{
         line-height: 3em;
@@ -22,26 +29,38 @@
       .test2{
         line-height: 6em;
       }
+      button{
+
+        background: #68B0AB;
+        font:2em;
+        color: white;
+        font-weight: bolder;
+        border: solid 2px #68B0AB;
+      }
 
     </style>
   </head>
   <body>
-    <p class="hints"></p>
-    <div>
-        <p class="output"><em>...diagnostic messages</em></p>
+
+    <div class="row">
+        <div class="col-xs-12 col-md-6 col-lg-6 container test1">
+          {% for line in test_1_lines %}
+          {{line}}
+          {% endfor %}
+        </div>
+    
+      </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-lg-6 container test2">
+        {% for line in test_2_lines %}
+        {{line}}
+        {% endfor %}
+      </div>
     </div>
 
-    <div class="container test1">
-      {% for line in test_1_lines %}
-      {{line}}
-      {% endfor %}
-    </div>
-    <div class="container test2">
-      {% for line in test_2_lines %}
-      {{line}}
-      {% endfor %}
-    </div>
     <script src="{{ url_for('static', filename='speech.js') }}"></script>
+
+
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <button type="button" id="recordBtn">Start Test</button>
