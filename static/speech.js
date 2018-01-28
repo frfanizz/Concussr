@@ -9,7 +9,7 @@ var recognition = new SpeechRecognition();
 var speechRecognitionList = new SpeechGrammarList();
 speechRecognitionList.addFromString(grammar, 1);
 recognition.grammars = speechRecognitionList;
-//recognition.continuous = false;
+recognition.continuous = true
 recognition.lang = 'en-US';
 recognition.interimResults = false;
 recognition.maxAlternatives = 1;
@@ -17,15 +17,14 @@ recognition.maxAlternatives = 1;
 var diagnostic = document.querySelector('.output');
 var bg = document.querySelector('html');
 
-var colorHTML= '';
-colors.forEach(function(v, i, a){
-  console.log(v, i);
-  colorHTML += '<span style="background-color:' + v + ';"> ' + v + ' </span>';
-});
-
-document.body.onclick = function() {
+$("#newRecordBtn")[0].onclick = function() {
   recognition.start();
-  console.log('Ready to receive a color command.');
+  console.log('Listening for numbers...');
+}
+
+$("#stopRecordBtn")[0].onclick = function() {
+  recognition.stop();
+  console.log('Done listening.');
 }
 
 recognition.onresult = function(event) {
@@ -41,13 +40,15 @@ recognition.onresult = function(event) {
   var last = event.results.length - 1;
   var color = event.results[last][0].transcript;
 
-  diagnostic.textContent = 'Result received: ' + color + '.';
-  bg.style.backgroundColor = color;
-  console.log('Confidence: ' + event.results[0][0].confidence);
-}
 
-recognition.onspeechend = function() {
-  recognition.stop();
+  finals = event.results[event.results.length - 1]
+
+  if (finals.isFinal) {
+    for (var i = 0; i < finals.length; i++) {
+      var transcript = finals[i].transcript;
+      console.log(transcript.replace(/[^0-9]/g, "").split(''));
+    }
+  }
 }
 
 recognition.onnomatch = function(event) {
