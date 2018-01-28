@@ -4,17 +4,35 @@
     <title>Flask Template Example</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link type="text/css" href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
     <style type="text/css">
+      body{
+        font-family: 'Lucida Console';
+      }
+
       .container {
         max-width: 500px;
         padding-top: 100px;
+        
       }
+      .test1{
+        line-height: 3em;
+      }
+      .test2{
+        line-height: 6em;
+      }
+
     </style>
   </head>
   <body>
-    <div class="container">
-      {% for line in reading_lines %}
-      {{line}}</br>
+    <div class="container test1">
+      {% for line in test_1_lines %}
+      {{line}}
+      {% endfor %}
+    </div>
+    <div class="container test2">
+      {% for line in test_2_lines %}
+      {{line}}
       {% endfor %}
     </div>
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
