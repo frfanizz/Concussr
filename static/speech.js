@@ -20,7 +20,7 @@ startRecording = function() {
   console.log('Listening for numbers...');
 
   $("#recordBtn")[0].onclick = stopRecording
-  $("#recordBtn")[0].textContent = "Stop recording"
+  $("#recordBtn")[0].textContent = "End Test"
 }
 
 stopRecording = function() {
@@ -29,7 +29,7 @@ stopRecording = function() {
   console.log('Done listening');
 
   $("#recordBtn")[0].onclick = startRecording
-  $("#recordBtn")[0].textContent = "Start recording"
+  $("#recordBtn")[0].textContent = "Start Test"
 }
 
 $("#recordBtn")[0].onclick = startRecording;
