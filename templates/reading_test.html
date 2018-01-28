@@ -29,7 +29,6 @@
     </style>
   </head>
   <body>
-<<<<<<< HEAD
     <div class="row">
         <div class="col-xs-12 col-md-6 col-lg-6 container-fluid test1">
           {% for line in test_1_lines %}
@@ -46,7 +45,6 @@
       </div>
     </div>
 
-=======
     <p class="hints"></p>
     <div>
         <p class="output"><em>...diagnostic messages</em></p>
@@ -62,12 +60,13 @@
       {{line}}
       {% endfor %}
     </div>
-    <script src="{{ url_for('static', filename='speech.js') }}"></script>
->>>>>>> 652f030a0ee437a70a0b5443603c804aef745c97
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <button type="button" id="recordBtn">Start Test</button>
+    <button type="button" id="newRecordBtn">Start Test</button>
+    <button type="button" id="stopRecordBtn">Stop Test</button>
     <p id="testResults"></p>
     <script src="{{ url_for('static', filename='record.js') }}"></script>
+    <script src="{{ url_for('static', filename='speech.js') }}"></script>
   </body>
 </html>
