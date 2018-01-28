@@ -13,12 +13,18 @@
   <div class="container text-center">
     
     <div class="appheader col-xs-12 col-md-6 col-md-offset-4 col-lg-6 col-lg-offset-4  ">
-        <img style="float:left; padding: 10px" src="static/logo.png" length="75px" width="75px" /> concusrr
-    </div>
+<<<<<<< HEAD
+            <img style="float:left; padding: 10px" src="static/logo.png" length="75px" width="75px" /> concusrr
+        </div>
     <div class="row t1_display">
         
 
+=======
+        <img style="float:left; padding: 10px" src="static/logo.png" length="75px" width="75px" /> concusrr
+    </div>
+
     <div class="row t1_display">
+>>>>>>> 3ce9aa5ab46038cb8333f6d04e0ca126e0a4229d
       <div class="col-xs-12 col-md-6 col-md-offset-4 col-lg-6 col-lg-offset-4 test1 leroy" style="margin-top: 1em;">
         {% for line in t1_lines %}
         {{line}}<br/>
@@ -28,8 +34,13 @@
     
     <div class="row t2_display" style="display: none;">
       <div class="col-xs-12 col-md-6 col-md-offset-4 col-lg-6 col-lg-offset-4 test2 leroy">
+<<<<<<< HEAD
+        {% for line in t2_lines %}<br/>
+        {{line}}
+=======
         {% for line in t2_lines %}
         {{line}}<br/>
+>>>>>>> 3ce9aa5ab46038cb8333f6d04e0ca126e0a4229d
         {% endfor %}
       </div>
     </div>

@@ -20,7 +20,7 @@ startRecording = function() {
   console.log('Listening for numbers...');
 
   $("#recordBtn")[0].onclick = stopRecording
-  $("#recordBtn")[0].textContent = "Stop recording"
+  $("#recordBtn")[0].textContent = "End Test"
 }
 
 stopRecording = function() {
@@ -29,7 +29,7 @@ stopRecording = function() {
   console.log('Done listening');
 
   $("#recordBtn")[0].onclick = startRecording
-  $("#recordBtn")[0].textContent = "Start recording"
+  $("#recordBtn")[0].textContent = "Start Test"
 }
 
 $("#recordBtn")[0].onclick = startRecording;
@@ -70,10 +70,10 @@ submitSolution = function(correct, guess) {
 
   if (current_test != total_tests) {
     current_test += 1
-    $(".t" + current_test + "_display").css('display', 'inline-block')
+    $(".t" + current_test + "_display").css('display', 'block')
   } else {
     $("#recordBtn").css('display', 'none')
-    $("#results").css('display', 'inline-block')
+    $("#results").css('display', 'block')
     $("#totalTime")[0].textContent = "Total time: " + (total_time / 1000) + " seconds"
     $("#totalCorrect")[0].textContent = "Total correct: " + total_score + "/" + total_numbers
   }
