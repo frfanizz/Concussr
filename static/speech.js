@@ -14,20 +14,25 @@ recognition.lang = 'en-US';
 recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 
-$("#newRecordBtn")[0].onclick = function() {
+startRecording = function() {
+  start_time = (new Date()).getTime()
   recognition.start();
   console.log('Listening for numbers...');
+
   $("#recordBtn")[0].onclick = stopRecording
   $("#recordBtn")[0].textContent = "End Test"
 }
 
-$("#stopRecordBtn")[0].onclick = function() {
+stopRecording = function() {
+  total_time += (new Date()).getTime() - start_time;
   recognition.stop();
-  console.log('Done listening.');
+  console.log('Done listening');
 
   $("#recordBtn")[0].onclick = startRecording
   $("#recordBtn")[0].textContent = "Start Test"
 }
+
+$("#recordBtn")[0].onclick = startRecording;
 
 recognition.onresult = function(event) {
   // The SpeechRecognitionEvent results property returns a SpeechRecognitionResultList object
@@ -116,8 +121,9 @@ function lcsLength(trial, actual) {
     return row[--j];
 }
 
+var start_time = 0;
 var current_test = 1;
-var total_tests = 2;
+var total_tests = 3;
 var total_time = 0;
 var total_score = 0;
 var total_numbers = 40 * total_tests;
