@@ -1,4 +1,5 @@
 import random as rand
+import re
 
 # Constant for width of test (in chars)
 testWidth = 10
@@ -11,6 +12,7 @@ def generateTest(testVersion = 1):
     Generate a King-Devick Test
     """
     output = ""
+    outputSoln = ""
     for row in range(testRows) :
         rowLocs = generateRowLocs()
         rowLocs.sort()
@@ -34,8 +36,10 @@ def generateTest(testVersion = 1):
             output += " " * testSpacing + str(rand.randint(0,9)) + "\n"
         if testVersion == 1 or testVersion == 2 :
             output += "\n"
-
-    return output
+    for char in output :
+        if char.isdigit() :
+            outputSoln += char
+    return output, outputSoln
 
 def generateRowLocs() :
     rowLocs = [testWidth]
@@ -47,4 +51,4 @@ def generateRowLocs() :
 # ex: [3, 5, 8, 10]
 
 
-# import KingDevickTestGenerator as kd; kd.generateTest(testVersion = 1, fileWriteName = "vers1.txt"); kd.generateTest(testVersion = 2, fileWriteName = "vers2.txt"); kd.generateTest(testVersion = 3, fileWriteName = "vers3.txt")
+# import KingDevickTestGenerator as kd; kd.generateTest(testVersion = 1); kd.generateTest(testVersion = 2); kd.generateTest(testVersion = 3)
