@@ -1,8 +1,66 @@
-body { 
-  background: "red";
+body{
+  font-family: 'Lucida Console';
+  background: #969696;
 }
 
-p {
+.leroy  {
+  margin-top: 1em;
+  border: solid 6px;
+  border-color: #68B0AB;
+  background: #DBDBDB;
+  border-radius: 40px;
 
-  background: "red";
+  max-width: 500px;
+}
+
+.test1{
+  line-height: 3em;
+}
+
+.test2{
+  line-height: 6em;
+}
+
+.container{
+  padding: 0;
+  max-width:500px;
+  padding: auto;
+  margin: auto;
+
+}
+.appheader{
+  font-variant: small-caps;
+  font-size:4em;
+
+  background:#68B0AB;
+}
+
+.appbuttons{
+  margin: 10px;
+}
+
+.row{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.results{
+  display: inline-block;
+  padding: 10px;
+  background: #68B0AB;
+  color: white;
+  font-weight: bolder;
+  border: solid 2px #68B0AB;
+  border-radius: 4px;
+
+}
+
+button{
+  padding: 10px;
+  background: #68B0AB;
+  font-size:2em;
+  color: white;
+  font-weight: bolder;
+  border: solid 2px #68B0AB;
+  border-radius: 4px;
 }
