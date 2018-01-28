@@ -2,7 +2,7 @@ import random as rand
 import re
 
 # Constant for width of test (in chars)
-testWidth = 8
+testWidth = 9
 testSpacing = 5
 testRows = 8
 testColumns = 5
