@@ -65,7 +65,12 @@ submitSolution = function(correct, guess) {
 
   if (current_test != total_tests) {
     current_test += 1
-    $(".t" + current_test + "_display").css('display', 'inline-block')
+    $(".t" + current_test + "_display").css('display', 'block')
+  } else {
+    $("#recordBtn").css('display', 'none')
+    $("#results").css('display', 'block')
+    $("#totalTime")[0].textContent = "Total time: " + (total_time / 1000) + " seconds"
+    $("#totalCorrect")[0].textContent = "Total correct: " + total_score + "/" + total_numbers
   }
 }
 
