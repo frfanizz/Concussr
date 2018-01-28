@@ -1,6 +1,6 @@
 # Concussr
 
-A responsive webapp to quickly gauge whether an athlete has suffered a concussion using a [King Devick Test](https://kingdevicktest.com/).
+A responsive webapp to quickly gauge whether an athlete has suffered a concussion using a [King Devick Test](https://kingdevicktest.com/). To use this test, establish a benchmark time taken during a time when an individual has not possibly suffered head trauma. Then, after a hit to the head, this test can be used. Compare the results of the test. If the user's time has increased by five seconds or more, [there is a significant chance that the user has suffered a concussion](https://www.huffingtonpost.com/2015/03/06/child-concussion-test_n_6819206.html), or other serious head injury.
 
 ## Getting Started
 
