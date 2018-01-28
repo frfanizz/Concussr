@@ -32,10 +32,8 @@ Use the generated address to view the site.
 
 * [Flask](http://flask.pocoo.org/) - A Microframework, for generating HTML from python
 * [Jinja2](http://jinja.pocoo.org/docs/2.10/) - A templating language
-
-## Contributing
-
-Go for it!
+* HTML, CSS & Javascript (Bootstrap) - Front end
+* Mozilla - Voice recognition web API
 
 ## Authors
 

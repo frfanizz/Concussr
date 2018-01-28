@@ -17,11 +17,16 @@ recognition.maxAlternatives = 1;
 $("#newRecordBtn")[0].onclick = function() {
   recognition.start();
   console.log('Listening for numbers...');
+  $("#recordBtn")[0].onclick = stopRecording
+  $("#recordBtn")[0].textContent = "End Test"
 }
 
 $("#stopRecordBtn")[0].onclick = function() {
   recognition.stop();
   console.log('Done listening.');
+
+  $("#recordBtn")[0].onclick = startRecording
+  $("#recordBtn")[0].textContent = "Start Test"
 }
 
 recognition.onresult = function(event) {
