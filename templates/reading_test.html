@@ -10,14 +10,18 @@
       body{
         font-family: 'Lucida Console';
       }
-
-      .container-fluid  {
+/*
+#DDA448
+*/
+      .container  {
         margin: 1em;
         width: 92.5%;
         border: solid 6px;
-        border-color: blue;
+        border-color: #68B0AB;
+        background: #DBDBDB;
         border-radius: 40px;
 
+        max-width: 500px;
       }
       .test1{
         line-height: 3em;
@@ -25,12 +29,20 @@
       .test2{
         line-height: 6em;
       }
+      button{
+
+        background: #68B0AB;
+        font:2em;
+        color: white;
+        font-weight: bolder;
+        border: solid 2px #68B0AB;
+      }
 
     </style>
   </head>
   <body>
     <div class="row">
-        <div class="col-xs-12 col-md-6 col-lg-6 container-fluid test1">
+        <div class="col-xs-12 col-md-6 col-lg-6 container test1">
           {% for line in test_1_lines %}
           {{line}}
           {% endfor %}
@@ -38,7 +50,7 @@
     
       </div>
     <div class="row">
-      <div class="col-xs-12 col-md-6 col-lg-6 container-fluid test2">
+      <div class="col-xs-12 col-md-6 col-lg-6 container test2">
         {% for line in test_2_lines %}
         {{line}}
         {% endfor %}
