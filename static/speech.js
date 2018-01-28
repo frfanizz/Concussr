@@ -14,9 +14,6 @@ recognition.lang = 'en-US';
 recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 
-var diagnostic = document.querySelector('.output');
-var bg = document.querySelector('html');
-
 $("#newRecordBtn")[0].onclick = function() {
   recognition.start();
   console.log('Listening for numbers...');
@@ -40,29 +37,34 @@ recognition.onresult = function(event) {
   var last = event.results.length - 1;
   var color = event.results[last][0].transcript;
 
-
   finals = event.results[event.results.length - 1]
 
   if (finals.isFinal) {
-    for (var i = 0; i < finals.length; i++) {
-      var transcript = finals[i].transcript;
-      var guess = transcript.replace(/[^0-9]/g, "").split('');
-      var correct = document.getElementById("t1_solution").innerHTML.split('');
-      submitSolution(correct, guess)
-    }
+    var transcript = finals[0].transcript;
+    var guess = transcript.replace(/[^0-9]/g, "").split('');
+    var solution = document.getElementById("t" + current_test + "_solution").innerHTML
+    var correct = solution.split('');
+    submitSolution(correct, guess)
   }
 }
 
 submitSolution = function(correct, guess) {
   console.log(lcsLength(correct, guess))
+
+  $(".t" + current_test + "_display").css('display', 'none')
+
+  if (current_test != total_tests) {
+    current_test += 1
+    $(".t" + current_test + "_display").css('display', 'inline-block')
+  }
 }
 
 recognition.onnomatch = function(event) {
-  diagnostic.textContent = "I didn't recognise that color.";
+  // TODO
 }
 
 recognition.onerror = function(event) {
-  diagnostic.textContent = 'Error occurred in recognition: ' + event.error;
+  // TODO
 }
 
 // Longest common subsequence length
@@ -98,4 +100,7 @@ function lcsLength(trial, actual) {
     }
     return row[--j];
 }
-// TODO: test
+
+var current_test = 1;
+var total_tests = 2;
+
