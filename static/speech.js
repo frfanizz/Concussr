@@ -61,6 +61,9 @@ recognition.onresult = function(event) {
 submitSolution = function(correct, guess) {
   var score = lcsLength(correct, guess)
   console.log(score)
+  if (!score) {
+      score = 0;
+  }
   total_score += score
 
   $(".t" + current_test + "_display").css('display', 'none')
