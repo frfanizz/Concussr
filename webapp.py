@@ -4,6 +4,10 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
+    return render_template("ho.html")
+
+@app.route("/reading_test.html")
+def reading_test():
     t1_lines, t1_solution = test_render(1)
     t2_lines, t2_solution = test_render(2)
     return render_template("reading_test.html",
