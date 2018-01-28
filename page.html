@@ -4,6 +4,7 @@
 
 	<!-- First, include the Webcam.js JavaScript Library -->
 	<script type="text/javascript" src="../webcam.min.js"></script>
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.187.0.min.js"></script>
 
 	<!-- Configure a few settings and attach camera -->
 	<script language="JavaScript">
@@ -40,8 +41,7 @@
             Image: {
                 Bytes: new Buffer(img),
                 S3Object: {
-                    Bucket: "mybucket", //change
-                    Name: "myface" //change
+                    Bucket: "concussr" //change
                 }
             }
         }
