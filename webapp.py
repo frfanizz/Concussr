@@ -2,11 +2,11 @@ from flask import Flask, render_template
 from KingDevickTestGenerator import generateTest
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/reading_test.html")
 def index():
     t1_lines, t1_solution = test_render(1)
     t2_lines, t2_solution = test_render(2)
-    return render_template("reading_test.html",
+    return render_template("ho.html",
             t1_lines = t1_lines, t1_solution = t1_solution,
             t2_lines = t2_lines, t2_solution = t2_solution)
 

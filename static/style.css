@@ -52,6 +52,8 @@ body{
   font-weight: bolder;
   border: solid 2px #68B0AB;
   border-radius: 4px;
+
+
 }
 
 button{
@@ -63,3 +65,24 @@ button{
   border: solid 2px #68B0AB;
   border-radius: 4px;
 }
+
+#links ul
+	{
+		list-style-type:none;
+			margin: 10px;
+
+	}
+#links li a {
+	color:white;
+	padding: 10px;
+	background:  #68B0AB;
+	float: left;
+    padding: 0px 5px 0px 5px;
+    margin: 2px 5px 2px 5px;
+  	border-radius: 4px;
+
+}
+	#links li a:hover {
+		color: #FFE483;
+		background-color:#000066;
+	}
