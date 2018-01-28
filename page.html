@@ -1,0 +1,22 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+</head>
+<body>
+<script src="webgazer.js" type="text/javascript" ></script>
+<script language="JavaScript">
+    window.onload = function() {
+
+        var localstorageLabel = 'webgazerGlobalData';
+        window.localStorage.setItem(localstorageLabel, null);
+
+        webgazer.setRegression('ridge').setTracker('clmtrackr').setGazeListener(function(data, clock) {
+            console.log(data);
+            if(!data)
+                return;
+        }).begin().showPredictionPoints(true);
+    }
+</script>
+</body>
+</html>
