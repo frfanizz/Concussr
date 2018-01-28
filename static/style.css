@@ -9,28 +9,29 @@ body{
   border-color: #68B0AB;
   background: #DBDBDB;
   border-radius: 40px;
-
-  max-width: 500px;
+  max-width: 360px;
 }
 
 .test1{
-  line-height: 3em;
+  line-height: 2em;
+  letter-spacing: 0.2em;
 }
 
 .test2{
-  line-height: 6em;
+  line-height: 4em;
+  letter-spacing: 0.2em;
 }
 
 .container{
   padding: 0;
+  max-width:360px;
   padding: auto;
   margin: auto;
-
 }
+
 .appheader{
   font-variant: small-caps;
   font-size:4em;
-
   background:#68B0AB;
 }
 
@@ -51,7 +52,6 @@ body{
   font-weight: bolder;
   border: solid 2px #68B0AB;
   border-radius: 4px;
-
 }
 
 button{
