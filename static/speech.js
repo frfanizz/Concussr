@@ -69,7 +69,7 @@ recognition.onerror = function(event) {
 
 // Longest common subsequence length
 function lcsLength(trial, actual) {
-    var s,i,j,m,n,
+    var s,i,j,
         lcs = [], row = [], c = [],
         left, diag, latch;
     //make sure shorter string is the column string
@@ -78,15 +78,13 @@ function lcsLength(trial, actual) {
         trial = actual;
         actual = s;
     }
-    m = trial.length;
-    n = actual.length;
     //build the dynamic programming table
-    for (j=0; j<n; j++) {
+    for (j=0; j<actual.length; j++) {
         row[j] = 0;
     }
-    for (i=0; i<m; i++) {
+    for (i=0; i<trial.length; i++) {
         c[i] = row = row.slice();
-        for (diag = 0, j = 0; j < n; j++, diag = latch) {
+        for (diag = 0, j = 0; j < actual.length; j++, diag = latch) {
             latch = row[j];
             if(trial[i] == actual[j]) {
                 row[j] = diag+1;
