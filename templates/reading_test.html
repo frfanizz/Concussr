@@ -31,7 +31,14 @@
         {% endfor %}
       </div>
     </div>
-
+    
+    <div class="row t3_display" style="display: none;">
+      <div class="col-xs-12 col-md-6 col-md-offset-4 col-lg-6 col-lg-offset-4 test3 leroy">
+        {% for line in t3_lines %}
+        {{line}}<br/>
+        {% endfor %}
+      </div>
+    </div>
     
       <div class="appbuttons" >
         <button type="button" id="recordBtn" style="z-index: 2;">Start Test</button>
@@ -39,8 +46,8 @@
           <p id="totalTime"></p>
           <p id="totalCorrect"></p>
         </div>
-
     </div>
+
   </div>
     
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>

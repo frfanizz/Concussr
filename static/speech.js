@@ -123,7 +123,7 @@ function lcsLength(trial, actual) {
 
 var start_time = 0;
 var current_test = 1;
-var total_tests = 2;
+var total_tests = 3;
 var total_time = 0;
 var total_score = 0;
 var total_numbers = 40 * total_tests;
