@@ -6,39 +6,36 @@ testSpacing = 5
 testRows = 8
 testColumns = 5
 
-def generateTest(testVersion = 1, fileWriteName = "test.txt") :
+def generateTest(testVersion = 1):
     """
     Generate a King-Devick Test
     """
-    try :
-        # open file stream
-        fw = open(fileWriteName, "w")
-    except IOError :
-        print "Error writing to", fileWriteName
-        sys.exit()
+    output = ""
     for row in range(testRows) :
         rowLocs = generateRowLocs()
         rowLocs.sort()
         rowLocs = rowLocs[0:-1]
-        fw.write(str(rand.randint(0,9)))
+        output += str(rand.randint(0,9))
         for currPos in range(testWidth) :
             if testVersion == 1 :
-                fw.write("-" * testSpacing)
+                output += "-" * testSpacing
             else :
-                fw.write(" " * testSpacing)
+                output += " " * testSpacing
             if currPos in rowLocs :
-                fw.write(str(rand.randint(0,9)))
+                output += (str(rand.randint(0,9)))
             else :
                 if testVersion == 1 :
-                    fw.write("-")
+                    output += "-"
                 else :
-                    fw.write(" ")
+                    output += " "
         if testVersion == 1 :
-            fw.write("-" * testSpacing + str(rand.randint(0,9)) + "\n")
+            output += "-" * testSpacing + str(rand.randint(0,9)) + "\n"
         else :
-            fw.write(" " * testSpacing + str(rand.randint(0,9)) + "\n")
+            output += " " * testSpacing + str(rand.randint(0,9)) + "\n"
         if testVersion == 1 or testVersion == 2 :
-            fw.write("\n")
+            output += "\n"
+
+    return output
 
 def generateRowLocs() :
     rowLocs = [testWidth]
