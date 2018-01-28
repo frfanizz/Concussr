@@ -11,6 +11,7 @@ def generateTest(testVersion = 1):
     """
     Generate a King-Devick Test
     """
+    # spacer character
     spacer = " "
     if testVersion == 1 :
         spacer = "-"
@@ -18,11 +19,13 @@ def generateTest(testVersion = 1):
         spacer = " "
     output = ""
     outputSoln = ""
+    # create a row of spaced numbers
     for row in range(testRows) :
         rowLocs = generateRowLocs()
         rowLocs.sort()
         rowLocs = rowLocs[0:-1]
         output += str(rand.randint(0,9))
+        # generate a random number at each position generated
         for currPos in range(testWidth) :
             output += spacer * testSpacing
             if currPos in rowLocs :
@@ -32,12 +35,16 @@ def generateTest(testVersion = 1):
         output += spacer * testSpacing + str(rand.randint(0,9)) + "\n"
         if testVersion == 1 or testVersion == 2 :
             output += "\n"
+    # generate solution for same file
     for char in output :
         if char.isdigit() :
             outputSoln += char
     return output, outputSoln
 
 def generateRowLocs() :
+    """
+    randomly generate positions for numbers in a line
+    """
     rowLocs = [testWidth]
     while len(rowLocs) < testColumns - 1 :
         currLoc = int(testWidth * rand.random())
