@@ -14,8 +14,7 @@
 #DDA448
 */
       .leroy  {
-        margin: 1em;
-        width: 92.5%;
+        margin-top: 1em;
         border: solid 6px;
         border-color: #68B0AB;
         background: #DBDBDB;
@@ -25,24 +24,39 @@
       }
       .test1{
         line-height: 3em;
+         margin-left: auto;
+        margin-right: auto;
       }
       .test2{
         line-height: 6em;
       }
       .container{
-        width: 55%;
+        padding: 0;
+        max-width:500px;
         padding: auto;
         margin: auto;
 
       }
+      .appheader{
+        font-variant: small-caps;
+        font-size:4em;
+
+        background:#68B0AB;
+      }
+
+      .row{
+        margin-left: auto;
+        margin-right: auto;
+      }
 
       button{
-
+        padding: 10px;
         background: #68B0AB;
-        font:2em;
+        font-size:2em;
         color: white;
         font-weight: bolder;
         border: solid 2px #68B0AB;
+        border-radius: 4px;
       }
 
     </style>
@@ -51,6 +65,11 @@
   <div id="t1_solution"style="visibility: hidden;">{{ t1_solution }}</div>
   <div id="t2_solution"style="visibility: hidden;">{{ t2_solution }}</div>
   <div class="container text-center">
+    <div class="appheader">
+        concusrr
+
+    </div>
+
     <div class="row">
         <div class="col-xs-12 col-md-6 col-md-offset-4 col-lg-6 col-lg-offset-3 test1 leroy">
           {% for line in t1_lines %}
@@ -65,6 +84,8 @@
         {% endfor %}
       </div>
     </div>
+    </div>
+    
     <script src="{{ url_for('static', filename='speech.js') }}"></script>
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
