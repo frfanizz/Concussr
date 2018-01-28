@@ -1,2 +1,3 @@
 *.pyc
 ids_keys.txt
+.DS_Store
